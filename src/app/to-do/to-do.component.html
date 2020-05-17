@@ -1,0 +1,14 @@
+<div class="ToDo">
+ 
+    <div class="ToDo-Container">
+      <div class="ToDo-Content">
+          <app-list-item 
+            *ngFor="let item of list" 
+            [item]="item" 
+            (deleteItem)="deleteItem($event)">
+        </app-list-item>
+      </div>
+      <input [(ngModel)]="todo" type="text" #ctrl="ngModel" (keyup.enter)="createNewListItem()" required placeholder="Enter a task">
+      <button class="ToDo-Add" (click)="createNewListItem()">Add</button>
+    </div>
+  </div>  
